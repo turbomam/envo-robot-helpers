@@ -6,6 +6,7 @@ where
   ?s a ?o .
   filter(isiri(?s))
   filter(strstarts(xsd:string(?s), "http://purl.obolibrary.org/obo/ENVO_"))
+  bind(strafter(xsd:string(?s), "http://purl.obolibrary.org/obo/ENVO_") as ?suffix)
   # bind(xsd:string(?s) as ?sstr)
 } limit 9
 
