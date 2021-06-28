@@ -12,7 +12,7 @@ WHERE
               IAO:0000597           ?allocatee ;
               owl:equivalentClass   ?equivalentClass .
     ?equivalentClass
-              owl:onDatatype        xsd:integer ;
+              rdf:type              rdf:List ;
               owl:onDatatype        xsd:integer ;
               owl:withRestrictions  ?Restrictions .
     ?Restrictions
