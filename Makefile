@@ -1,6 +1,6 @@
 .PHONY: nmdc_envo_id_range.tsv find_last_in_range.tsv
 
-$(current_robot_gsheet) : https://docs.google.com/spreadsheets/d/1hk7p5MdjRqjP1P3-0zBmIzsfjoOkziY7uuLFxYH1jKU/export?gid=0&format=csv
+$(current_robot_gsheet) : 'https://docs.google.com/spreadsheets/d/1hk7p5MdjRqjP1P3-0zBmIzsfjoOkziY7uuLFxYH1jKU/export?gid=0&format=csv'
 
 nmdc_envo_id_range.tsv:
 	robot query \
@@ -19,4 +19,5 @@ last_used_id.txt: nmdc_envo_id_range.tsv get_envo_ids.tsv
 	python apply_range_to_usage.py > $@
 	
 current_robot_gsheet.tsv:
-	wget --no-check-certificate -O test.csv $(current_robot_gsheet)
+	# wget --no-check-certificate -O test.csv $(current_robot_gsheet)
+	echo $(current_robot_gsheet)
