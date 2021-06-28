@@ -1,4 +1,4 @@
-.PHONY nmdc_envo_id_range.tsv find_last_in_range.tsv
+.PHONY: nmdc_envo_id_range.tsv find_last_in_range.tsv
 
 nmdc_envo_id_range.tsv:
 	robot query \
