@@ -12,3 +12,6 @@ get_envo_ids.tsv:
 	robot query \
 	  --input-iri https://raw.githubusercontent.com/EnvironmentOntology/envo/master/envo.owl \
 	  --query get_envo_ids.rq get_envo_ids.tsv
+
+last_used_id.txt: nmdc_envo_id_range.tsv get_envo_ids.tsv
+	python apply_range_to_usage.py > $@
