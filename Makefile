@@ -38,10 +38,10 @@ last_used_id.txt: nmdc_envo_id_range.tsv get_envo_ids.tsv
 	  --format ofn \
 	  -o $@
 
-../envo/src/envo-edit.owl: ../envo/src/envo/modules/temporary_robot_template.owl
+../envo/src/envo/envo-edit.owl: ../envo/src/envo/modules/temporary_robot_template.owl
 	robot merge \
 	  --input $@ \
-	  --input ../envo/src/modules/temporary_robot_template.owl \
+	  --input ../envo/src/envo/modules/temporary_robot_template.owl \
 	  --collapse-import-closure false \
 	  convert \
 	  --format ofn \
