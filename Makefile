@@ -1,7 +1,7 @@
 .PHONY: nmdc_envo_id_range.tsv find_last_in_range.tsv
 
 # requires that the google sheet is set to public sharing
-current_robot_gsheet='https://docs.google.com/spreadsheets/d/1hk7p5MdjRqjP1P3-0zBmIzsfjoOkziY7uuLFxYH1jKU/export?gid=0&format=csv'
+current_robot_gsheet='https://docs.google.com/spreadsheets/d/12GICSjx2s3Ey0Crv9uMdkW8unt3LxPcOS2_u7EMAr38/export?gid=154764881&format=csv'
 
 nmdc_envo_id_range.tsv:
 	robot query \
