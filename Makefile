@@ -1,4 +1,10 @@
-.PHONY: nmdc_envo_id_range.tsv find_last_in_range.tsv
+#.PHONY: nmdc_envo_id_range.tsv find_last_in_range.tsv
+
+.PHONY: clean
+
+clean:
+	rm *tsv
+	rm *csv
 
 # requires that the google sheet is set to public sharing
 current_robot_gsheet='https://docs.google.com/spreadsheets/d/12GICSjx2s3Ey0Crv9uMdkW8unt3LxPcOS2_u7EMAr38/export?gid=154764881&format=csv'
