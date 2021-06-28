@@ -21,3 +21,4 @@ last_used_id.txt: nmdc_envo_id_range.tsv get_envo_ids.tsv
 current_robot_gsheet.tsv:
 	# wget --no-check-certificate -O test.csv $(current_robot_gsheet)
 	echo $(current_robot_gsheet)
+	wget --no-check-certificate -O test.csv $(current_robot_gsheet)
