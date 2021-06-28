@@ -36,4 +36,16 @@ last_used_id.txt: nmdc_envo_id_range.tsv get_envo_ids.tsv
 	  --ontology-iri "http://purl.obolibrary.org/envo/modules/temporary_robot_template.owl" \
 	  convert \
 	  --format ofn \
-	  -o ../envo/src/envo/modules/temporary_robot_template.owl
+	  -o $@
+
+../envo/src/envo-edit.owl:
+	robot merge \
+	  --input $@ \
+	  --input ../envo/src/modules/temporary_robot_template.owl \
+	  --collapse-import-closure false \
+	  convert \
+	  --format ofn \
+	  --output $@
+
+
+
