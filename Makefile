@@ -1,7 +1,7 @@
 .PHONY: nmdc_envo_id_range.tsv find_last_in_range.tsv
 
 # requires that the google sheet is set to public sharing
-current_robot_gsheet='https://docs.google.com/spreadsheets/d/1hk7p5MdjRqjP1P3-0zBmIzsfjoOkziY7uuLFxYH1jKU/export?gid=0&format=tsv'
+current_robot_gsheet='https://docs.google.com/spreadsheets/d/1hk7p5MdjRqjP1P3-0zBmIzsfjoOkziY7uuLFxYH1jKU/export?gid=0&format=csv'
 
 nmdc_envo_id_range.tsv:
 	robot query \
@@ -18,6 +18,11 @@ get_envo_ids.tsv:
 
 last_used_id.txt: nmdc_envo_id_range.tsv get_envo_ids.tsv
 	python apply_range_to_usage.py > $@
-	
-current_robot_gsheet.tsv:
+
+# make sure you have a local clone of https://github.com/EnvironmentOntology/envo
+# that you have created an issue and corresponding branch
+# your branch is up-to-date with main
+# and you are checked-out into the appropriate branch
+# overwrites by default
+../envo/src/envo/modules/temporary_robot_template.csv:
 	wget --no-check-certificate -O $@ $(current_robot_gsheet)
