@@ -26,3 +26,13 @@ last_used_id.txt: nmdc_envo_id_range.tsv get_envo_ids.tsv
 # overwrites by default
 ../envo/src/envo/modules/temporary_robot_template.csv:
 	wget --no-check-certificate -O $@ $(current_robot_gsheet)
+
+robot template \
+  --template ../envo/src/envo/modules/temporary_robot_template.csv \
+  -i ../envo/src/envo/envo-edit.owl \
+  --prefix "RO:http://purl.obolibrary.org/obo/RO_" \
+  --prefix "ENVO:http://purl.obolibrary.org/obo/ENVO_"  \
+  --ontology-iri "http://purl.obolibrary.org/envo/modules/temporary_robot_template.owl" \
+  convert \
+  --format ofn \
+  -o ../envo/src/envo/modules/temporary_robot_template.owl
