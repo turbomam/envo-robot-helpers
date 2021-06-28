@@ -3,7 +3,7 @@ where
 { 
   ?s a ?o .
   filter(isiri(?s))
-  bind xsd:string(?s) as ?sstr
+  bind(xsd:string(?s) as ?sstr)
 } limit 9
 
 # http://purl.obolibrary.org/obo/ENVO_03600000
