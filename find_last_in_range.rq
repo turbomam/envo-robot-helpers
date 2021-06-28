@@ -5,7 +5,7 @@ where
 { 
   ?s a ?o .
   filter(isiri(?s))
-  filter(strstarts(xsd:string(?s), "http")
+  filter(strstarts(xsd:string(?s), "http"))
   # bind(xsd:string(?s) as ?sstr)
 } limit 9
 
