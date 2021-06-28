@@ -1,7 +1,8 @@
 select * 
 where 
 { 
-  ?s a ?o 
+  ?s a ?o .
+  filter(isiri(?s))
 } limit 9
 
 # http://purl.obolibrary.org/obo/ENVO_03600000
