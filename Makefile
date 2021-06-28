@@ -5,6 +5,7 @@
 clean:
 	rm -f *tsv
 	rm -f *csv
+	rm -f ../envo/src/envo/modules/temporary_robot_template*
 
 # requires that the google sheet is set to public sharing
 current_robot_gsheet='https://docs.google.com/spreadsheets/d/12GICSjx2s3Ey0Crv9uMdkW8unt3LxPcOS2_u7EMAr38/export?gid=154764881&format=csv'
