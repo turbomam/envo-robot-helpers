@@ -1,0 +1,30 @@
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  IAO:  <http://purl.obolibrary.org/obo/IAO_>
+
+SELECT  ?allocatee ?min ?max
+WHERE
+  { VALUES ?allocatee { "National Microbiome Data Collaborative" }
+    ?Restrictionsange
+              rdf:type              rdfs:Datatype ;
+              IAO:0000597           ?allocatee ;
+              owl:equivalentClass   ?equivalentClass .
+    ?equivalentClass
+              owl:onDatatype        xsd:integer ;
+              owl:onDatatype        xsd:integer ;
+              owl:withRestrictions  ?Restrictions .
+    ?Restrictions
+              rdf:type              rdf:List ;
+              rdf:first             ?RestrictionsFirst ;
+              rdf:rest              ?RestrictionsRest .
+    ?RestrictionsFirst
+              xsd:minInclusive      ?min .
+    ?RestrictionsRest
+              rdf:type              rdf:List ;
+              rdf:rest              rdf:nil ;
+              rdf:first             ?RestrictionsRestFirst .
+    ?RestrictionsRestFirst
+              xsd:maxInclusive      ?max
+  }
