@@ -21,7 +21,8 @@ nmdc_envo_id_range.tsv:
 # or WE could take some responsibility for tracking our own allocation/usage
 get_envo_ids.tsv:
 	robot query \
-	  --input-iri https://raw.githubusercontent.com/EnvironmentOntology/envo/master/envo.owl \
+	  # --input-iri https://raw.githubusercontent.com/EnvironmentOntology/envo/master/envo.owl \
+	  --input ../envo/src/envo/envo-edit.owl \
 	  --query get_envo_ids.rq get_envo_ids.tsv
 
 last_used_id.txt: nmdc_envo_id_range.tsv get_envo_ids.tsv
