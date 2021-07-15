@@ -1,9 +1,9 @@
-.PHONY: clean
+.PHONY: clean reason
 
 # SEE https://github.com/EnvironmentOntology/envo/wiki/ENVO-Robot-template-and-merge-workflow
 
 # requires that the google sheet is set to public sharing
-current_robot_gsheet='https://docs.google.com/spreadsheets/d/12GICSjx2s3Ey0Crv9uMdkW8unt3LxPcOS2_u7EMAr38/export?gid=154764881&format=csv'
+current_robot_gsheet='https://docs.google.com/spreadsheets/d/17yfrsNTiYk7XhYAQMJMYt7Is0RspLmZHu0WWpotIb9o/export?gid=724193215&format=csv'
 
 # or use the % substitution?
 envo_location=../envo
@@ -71,3 +71,5 @@ $(envo_location)/src/envo/envo-edit.owl: $(envo_location)/src/envo/modules/tempo
 	  --format ofn \
 	  --output $@
 
+reason:
+	robot reason --input ../envo/src/envo/envo-edit.owl --reasoner elk
